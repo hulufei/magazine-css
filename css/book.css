@@ -1,0 +1,547 @@
+/* Ratio: 1600/1080 */
+
+/* Common styles */
+body {
+  font: 13px/1.5 'Gafata', sans-serif, arial;
+  background: #6b6b6b;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: #ccc;
+}
+
+h1,
+h2 {
+  margin: 0;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+h1 {
+  color: #fff;
+}
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
+
+/* Colors */
+.bg-darkgray {
+  background: #a2a2a2;
+}
+.bg-gray {
+  background: #d3d1d2;
+}
+.bg-pink {
+  background: #f999d2;
+}
+
+/* Layout */
+.container {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.main {
+  position: relative;
+}
+
+.preview,
+.content {
+  float: left;
+  width: 50%;
+  height: 864px;
+}
+
+/* Page separator */
+
+.seperator {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 0; /* nbsp in HTML necessary for Opera to show the DIV; width:0 necessary to remove effect of nbsp */
+  border-left: 1px solid #e5e5e5;
+  border-right: 1px solid #e5e5e5;
+  margin-left: -2px;
+  box-shadow: 0 0 30px #000;
+}
+
+/* Book edge effect */
+.edge {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+.edge i
+{
+  width: 5px;
+  height: 100%;
+  border: 1px solid #8b8b8b;
+  background: #fff;
+}
+.edge .inner {
+  width: 2px;
+}
+/* Left edge */
+.preview .edge {
+  left: -21px;
+}
+.preview .edge i {
+  float: left;
+  border-right: none;
+  box-shadow: -1px 0 5px #8b8b8b;
+}
+.preview .edge .outer {
+  box-shadow: -5px 0 18px #333;
+}
+/* Right edge */
+.content .edge {
+  right: -21px;
+}
+.content .edge i {
+  float: right;
+  border-left: none;
+  box-shadow: 2px 0 5px -1px #8b8b8b;
+}
+.content .edge .outer {
+  box-shadow: 5px 0 18px #333;
+}
+
+/* Preview style(main left) */
+.preview {
+  position: relative;
+  border-top: 1px solid #000;
+  background: #c3c6be;
+}
+.preview img {
+  width: 100%;
+  height: 100%;
+}
+.about {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: #fff;
+  background: #000;
+  opacity: 0.5;
+  text-align: right;
+}
+.icon-eye {
+  float: left;
+  margin: 5px 20px;
+  font-size: 2.5em;
+}
+.price {
+  line-height: 60px;
+  font-size: 3em;
+}
+.price sup {
+  margin-right: 5px;
+  font-size: 25px;
+}
+.buy {
+  float: right;
+  margin: 10px 20px;
+  line-height: 1;
+  color: #fff;
+  font-size: 2em;
+}
+.buy i {
+  display: block;
+}
+
+/* Content style(main right) */
+.content {
+  position: relative;
+  background: #fff;
+}
+
+.user {
+  margin: 25px 25px 0 0;
+  text-align: right;
+}
+.circle {
+  float: right;
+  margin-left: 5px;
+  border-radius: 50%;
+}
+.name {
+  display: block;
+  margin: 5px 0;
+  color: #a3a3a3;
+}
+.follow {
+  padding: 5px 15px;
+  border-radius: 5px;
+  color: #fff;
+  background: #000;
+}
+.follow:hover {
+  opacity: 0.5
+}
+.description {
+  width: 80%;
+  line-height: 1.8;
+  margin: 30px auto 40px;
+  color: #747474;
+  font-size: 1.8em;
+  text-align: center;
+  text-shadow: 0 2px #fff;
+}
+.description cite {
+  display: block;
+  color: #000;
+  font-style: normal;
+}
+/* Card style */
+.card {
+  width: 50%;
+  margin: 0 auto;
+  border: 1px solid #d5d5d5;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #d5d5d5;
+  color: #787878;
+}
+.card-hd {
+  position: relative;
+  line-height: 80px;
+  padding: 0 15px;
+  background: #eee;
+  color: #3b3b3b;
+  text-shadow: 0 2px #fff;
+}
+/* Rounded corner */
+.card-hd h2:before,
+.card-hd h2:after {
+  position: absolute;
+  bottom: -10px;
+  content: ' ';
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+}
+.card-hd h2:before {
+  left: -11px;
+  clip: rect(0,20px,20px,8px);
+  box-shadow: inset -3px 1px 8px -2px #ccc;
+}
+.card-hd h2:after {
+  right: -11px;
+  clip: rect(0,12px,20px,0);
+  box-shadow: inset 3px 1px 8px -2px #ccc;
+}
+.card-hd h2 {
+  float: left;
+  font-size: 2em;
+}
+.card-hd .discount {
+  position: relative;
+  float: right;
+  font-size: 1.8em;
+}
+.discount-mark {
+  position: absolute;
+  left: 3px;
+  top: 18px;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+.card-cnt {
+  line-height: 1;
+  border-top: 2px dashed #dfdfdf;
+  background: #fefefe;
+  text-align: center;
+}
+.card-cnt .expire {
+  margin: 25px 0;
+}
+.card-cnt time {
+  display: block;
+  font-size: 2em;
+}
+
+/* Comments */
+.comments {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.comments .total {
+  position: relative;
+  float: right;
+  padding: 5px 10px;
+  margin-right: 10px;
+  color: #fff;
+  background: #a3a3a3;
+}
+.total:after {
+  position: absolute;
+  top: 0;
+  right: -12px;
+  content: '';
+  width: 0;
+  height: 0;
+  /* @totalHeight / 2 */
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+
+  border-left: 12px solid #a3a3a3;
+}
+.comments-hd,
+.comments-cnt {
+  margin: 0 15px;
+}
+.comments-cnt {
+  line-height: 40px;
+  margin-top: 10px;
+  padding: 15px 5px 0 20px;
+  border-top: 1px solid #dfdfdf;
+}
+.comments-cnt input {
+  float: right;
+  width: 250px;
+  height: 16px;
+  border: none;
+  margin: 6px 10px 0 0;
+  padding: 5px 5px 5px 15px;
+  box-shadow: 0 0 8px #ccc;
+}
+.dots {
+  float: left;
+}
+.dot {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 5px 0 5px 10px;
+  border-radius: 50%;
+}
+
+/* Pagination */
+.pagination {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  margin-top: -1.5em;
+}
+.prev,
+.next {
+  display: inline-block;
+  position: absolute;
+  padding: 1em 0;
+  color: transparent;
+}
+.prev {
+  left: 30px;
+}
+.next {
+  right: 30px;
+}
+.prev:hover,
+.next:hover {
+  color: transparent;
+}
+.prev:before,
+.prev:after,
+.next:before,
+.next:after {
+  position: absolute;
+  width: .8em;
+  height: 50%;
+  border: 1px solid #d5d5d5;
+  background: #f5f5f5;
+  content: '';
+}
+.prev:hover.prev:before,
+.prev:hover.prev:after,
+.next:hover.next:before,
+.next:hover.next:after {
+  background: #ccc;
+}
+.prev:before,
+.next:before {
+  top: 0;
+  border-bottom: 0;
+}
+.prev:after,
+.next:after {
+  bottom: 0;
+  border-top: 0;
+}
+.prev:before,
+.prev:after {
+  left: -.2em;
+}
+.next:before,
+.next:after {
+  right: -.2em;
+}
+.prev:before,
+.next:after {
+  -webkit-transform: skewX(-30deg);
+  -moz-transform: skewX(-30deg);
+  -ms-transform: skewX(-30deg);
+  transform: skewX(-30deg);
+}
+.prev:after,
+.next:before {
+  -webkit-transform: skewX(30deg);
+  -moz-transform: skewX(30deg);
+  -ms-transform: skewX(30deg);
+  transform: skewX(30deg);
+}
+
+/* Footer style */
+.footer {
+  line-height: 54px;
+  margin-top: 15px;
+  background: #2b2b2b;
+}
+.caption {
+  float: left;
+  padding: 0 20px;
+  color: #fff;
+  background: #5e5e5e;
+  font-size: 1.5em;
+}
+.thumb {
+  float: left;
+  width: 42px;
+  height: 54px;
+  opacity: 0.5;
+}
+.thumb-hover img,
+.thumb-item:hover img {
+  opacity: 1;
+}
+
+/* Barcode */
+/* @see http://xta.github.io/Barcode-Generator-UPC-A/ */
+#upc-a {
+  width: 248px;
+  margin: 80px auto 20px;
+  padding: 15px 0;
+  border: 1px solid #ededed;
+  border-radius: 5px;
+}
+
+#upc-wrap {
+  position: relative;
+  width: 190px; /* 95 *2 */
+  height: 85px; /* 62 *2 */
+  margin: 0 auto;
+}
+.code-type,
+.checksum {
+  position: absolute;
+  bottom: -14px;
+}
+.code-type {
+  left: -13px;
+}
+.checksum {
+  right: -13px;
+}
+
+.m { /* module 1px *2 width */
+  width: 2px;
+  height: 80px;
+  display: inline-block;
+  /* fix for IE */
+  *display: inline;
+  *zoom: 1;
+  vertical-align: top;
+}
+
+.long {
+  height: 85px;
+}
+
+.o {
+  background-color: #fff;
+}
+
+.e {
+  background-color: #000;
+}
+
+.l {
+  display: inline-block;
+  /* fix for IE */
+  *display: inline;
+  *zoom: 1;
+}
+
+.r {
+  display: inline-block;
+  /* fix for IE */
+  *display: inline;
+  *zoom: 1;
+}
+
+.r .o.m {
+  background-color: #000;
+}
+
+.r .e.m {
+  background-color: #fff;
+}
+
+#l1, #l2, #l3, #l4, #l5, #l6 {
+  display: inline-block;
+  /* fix for IE */
+  *display: inline;
+  *zoom: 1;
+}
+
+#r1, #r2, #r3, #r4, #r5, #r6 {
+  display: inline-block;
+  /* fix for IE */
+  *display: inline;
+  *zoom: 1;
+}
+
+.digits {
+  font-family: monospace, Courier;
+  display: inline;
+  position: relative;
+  top: -4px;
+  letter-spacing: 7px;
+}
+
+#l-digits {
+  float: left;
+  margin-left: 52px;
+}
+
+#r-digits {
+  float: right;
+  margin-right: 45px;
+}
+
+#red-strike {
+  width: 301px;
+  height: 3px;
+  background-color: red;
+  position: absolute;
+  margin: 100px 30px 0 22px;
+}
